@@ -1,0 +1,23 @@
+{
+  "name": "files-visualization-angular-project",
+  "version": "1.0.0",
+  "description": "This app will visualize files as standard file system in operating systems. (Explorer in Windows or Finder in MacOS)",
+  "main": "index.js",
+  "dependencies": {
+    "@angular/cli": "^11.2.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lilit5/angularFilesVisualization.git"
+  },
+  "author": "Lilit Sargsyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lilit5/angularFilesVisualization/issues"
+  },
+  "homepage": "https://github.com/Lilit5/angularFilesVisualization#readme"
+}
