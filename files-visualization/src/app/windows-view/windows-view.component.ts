@@ -9,6 +9,8 @@ export class WindowsViewComponent implements OnInit {
 
   constructor() { }
   cwd:String = '';
+  folderIconUrl:String = 'assets/images/win-icons/folder-icon.png';
+  backArrowIconUrl:String = 'assets/images/win-icons/arrow-up-icon.png'
   ngOnInit(): void {
   }
 
