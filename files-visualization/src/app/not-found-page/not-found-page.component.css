@@ -1,0 +1,16 @@
+#not-found {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#not-found button {
+    border: none;
+    padding: 8px 16px;
+    background-color: #333;
+    color: lightgray;
+}
+
+#not-found button:hover {
+    
+}
