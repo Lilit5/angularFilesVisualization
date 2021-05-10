@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class WindowsViewComponent implements OnInit {
 
   constructor() { }
-
+  cwd:String = '';
   ngOnInit(): void {
   }
 
