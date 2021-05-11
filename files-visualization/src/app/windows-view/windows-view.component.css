@@ -34,6 +34,20 @@
     padding: var(--def-padding);
 }
 
+.file-icon::before, .folder-icon::before {
+    content: '';
+    /* background-image: url({{fileIconUrl}}); */
+    content: url(../../assets/images/win-icons/file-icon_sm.png);
+    width: 15px;
+    height: 20px;
+    padding: var(--def-padding);
+    display: inline-block;
+}
+
+.folder-icon::before {
+    content: url(../../assets/images/win-icons/folder-icon_sm.png);
+}
+
 .path {
     width: 70%;
     height: 10px;
