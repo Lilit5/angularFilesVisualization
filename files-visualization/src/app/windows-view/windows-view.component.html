@@ -22,11 +22,13 @@
                 <th>Type</th>
                 <th>Size</th>
             </tr>
-            <tr>
-                <td>index</td>
-                <td>10/05/21</td>
-                <td>file</td>
-                <td>2Kb</td>
+            <tr *ngFor="let path of paths">
+                <td >
+                    {{path.path}}
+                </td>
+                <td>{{path.modificationDate}}</td>
+                <td>{{path.type}}</td>
+                <td>{{path.size}}</td>
             </tr>
         </table>
     </div>

@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WindowsViewComponent } from './windows-view/windows-view.component';
 import { MacViewComponent } from './mac-view/mac-view.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component'
+import { FilePathService } from './services/file-path.service';
 
 const routes: Routes = [
   { path: '', component: ChooseOsScreenComponent, pathMatch: 'full' },
@@ -28,7 +29,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-
+    FilePathService
   ],
   bootstrap: [AppComponent]
 })

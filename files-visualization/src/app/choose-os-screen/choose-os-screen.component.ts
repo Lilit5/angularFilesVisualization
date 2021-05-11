@@ -9,9 +9,9 @@ export class ChooseOsScreenComponent implements OnInit {
 
   constructor() { }
 
-  macImgUrl:string = 'assets/images/mac-logo.png';
-  winImgUrl:string = 'assets/images/win-logo.png';
-  backgroundImgUrl:string = 'assets/images/city-background.jfif';
+  macImgUrl:string = 'assets/images/mac-os-logo.svg';
+  winImgUrl:string = 'assets/images/windows.svg';
+  backgroundImgUrl:string = 'assets/images/background.png';
 
   ngOnInit(): void {
   }

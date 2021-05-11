@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilePathService } from '../services/file-path.service';
 
 @Component({
   selector: 'windows-view',
@@ -6,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./windows-view.component.css']
 })
 export class WindowsViewComponent implements OnInit {
+  cwd: string = '';
+  folderIconUrl: string = 'assets/images/win-icons/folder-icon.png';
+  backArrowIconUrl: string = 'assets/images/win-icons/arrow-up-icon.png';
+  paths;
 
-  constructor() { }
-  cwd:String = '';
-  folderIconUrl:String = 'assets/images/win-icons/folder-icon.png';
-  backArrowIconUrl:String = 'assets/images/win-icons/arrow-up-icon.png'
+  constructor(filePaths: FilePathService) { 
+    this.paths = filePaths.getPaths();
+  }
+
   ngOnInit(): void {
   }
 
