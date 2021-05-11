@@ -17,19 +17,12 @@
     <div class="content-table">
         <table>
             <tr>
-                <th>Name</th>
-                <th>Date modified</th>
-                <th>Type</th>
-                <th>Size</th>
+                <th (click)="sortByFieldName('name')">Name</th>
+                <th (click)="sortByFieldName('modificationDate')">Date modified</th>
+                <th (click)="sortByFieldName('type')">Type</th>
+                <th (click)="sortByFieldName('size')">Size</th>
             </tr>
-            <tr *ngFor="let path of paths" >
-                <!-- isFolder = {{isFolder}} -->
-                <!-- <td class="folder-icon"> -->
-                <!-- <td [class.file-icon]="isFolder"> -->
-                <!-- <td [ngClass]="{'folder-icon': isFolder === true,
-                                'file-icon': isFolder === false                
-                }"> -->
-                <!-- <td *ngIf="isFolder; else elseBlock" class="folder-icon"> -->
+            <tr *ngFor="let path of paths"  (dblclick)="defineFileType()">
                 <td *ngIf="path.type == 'folder'; else elseBlock" class="folder-icon">
                     {{path.details.name}}
                 </td>
@@ -38,11 +31,6 @@
                         {{path.details.name}}
                     </td>
                 </ng-template>
-                <!-- <td [ngClass]="{
-                    'folder-icon': true,
-                    'file-icon': isFolder,
-                }"> -->
-                
                 <td>{{path.modificationDate}}</td>
                 <td>{{path.type}}</td>
                 <td>{{path.size}}</td>
