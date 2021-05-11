@@ -8,6 +8,7 @@ import { WindowsViewComponent } from './windows-view/windows-view.component';
 import { MacViewComponent } from './mac-view/mac-view.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component'
 import { FilePathService } from './services/file-path.service';
+import { Utils } from './utils/utils';
 
 const routes: Routes = [
   { path: '', component: ChooseOsScreenComponent, pathMatch: 'full' },
@@ -29,7 +30,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    FilePathService
+    FilePathService,
+    Utils
   ],
   bootstrap: [AppComponent]
 })

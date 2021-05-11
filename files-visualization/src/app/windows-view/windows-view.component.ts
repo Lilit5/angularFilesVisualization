@@ -13,7 +13,7 @@ export class WindowsViewComponent implements OnInit {
   paths;
 
   constructor(filePaths: FilePathService) { 
-    this.paths = filePaths.getPaths();
+    this.paths = filePaths.pathsParsed;
   }
 
   ngOnInit(): void {
