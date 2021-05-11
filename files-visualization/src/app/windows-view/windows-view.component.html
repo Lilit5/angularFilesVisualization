@@ -22,9 +22,9 @@
                 <th (click)="sortByFieldName('type')">Type</th>
                 <th (click)="sortByFieldName('size')">Size</th>
             </tr>
-            <tr *ngFor="let path of paths"  (dblclick)="defineFileType()">
+            <tr *ngFor="let path of foldersWithContent"  (dblclick)="defineFileType()">
                 <td *ngIf="path.type == 'folder'; else elseBlock" class="folder-icon">
-                    {{path.details.name}}
+                    {{path.path[folderIndex]}}
                 </td>
                 <ng-template #elseBlock>
                     <td class="file-icon">

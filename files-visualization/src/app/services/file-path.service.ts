@@ -11,7 +11,7 @@ export class FilePathService {
 
   constructor(utils: Utils) {
     this._pathsParsed = utils.parseFilePaths(filePath);
-    this._foldersWithContent = utils.parseFolderContent(filePath);
+    this._foldersWithContent = utils.parseFolderContent(this.pathsParsed);
    }
 
   get pathsParsed() {

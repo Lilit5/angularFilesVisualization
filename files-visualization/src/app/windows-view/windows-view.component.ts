@@ -15,15 +15,22 @@ export class WindowsViewComponent implements OnInit {
   paths;
   foldersWithContent;
   utils;
+  folderIndex: number;
+  itemName: string;
 
   constructor(filePaths: FilePathService, utils: Utils) { 
     this.utils = utils;
     this.paths = filePaths.pathsParsed;
     this.foldersWithContent = filePaths.foldersWithContent;
+    this.folderIndex = 0;
   }
 
   defineFileType() {
+    console.log("this.folderIndex ----- ",this.folderIndex);
+    // this.itemName = 
+    this.folderIndex++;
     console.log("clckeeeeeeeeeeed", this.foldersWithContent);
+
     // this.paths = [
     //   {
     //     "path": "univercity/faculties/mathematics/doctors.doc",
@@ -41,8 +48,10 @@ export class WindowsViewComponent implements OnInit {
   }
 
   sortByFieldName(sortBy: string) {
-    const sortedContent = this.utils.sortContent(this.paths, sortBy);
-    this.paths = sortedContent;
+    console.log("Sorting ...");
+    
+    const sortedContent = this.utils.sortContent(this.foldersWithContent, sortBy);
+    this.foldersWithContent = sortedContent;
   }
 
   ngOnInit(): void {

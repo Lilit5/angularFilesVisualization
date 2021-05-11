@@ -1,6 +1,6 @@
 :root {
     --hover-color: rgb(158, 199, 226);
-    --def-padding: 8px 16px;
+    --defPadding: 8px 16px;
 }
 
 .flex-horizontal {
@@ -40,8 +40,9 @@
     content: url(../../assets/images/win-icons/file-icon_sm.png);
     width: 15px;
     height: 20px;
-    padding: var(--def-padding);
+    padding: 0 10px;
     display: inline-block;
+    vertical-align: middle;
 }
 
 .folder-icon::before {
@@ -54,7 +55,6 @@
     background-color: grey;
 }
 
-/* .file-path */
 .file-path * {
     display: inline;
 
@@ -64,3 +64,20 @@
     background-color: var(--hover-color);
     border: 3px solid green;
 } */
+
+.content-table tr:not(:first-child):hover {
+    background-color: rgb(158, 199, 226, 0.3);
+}
+
+th:hover {
+    background-color: rgb(158, 199, 226, 0.3);
+}
+
+.content-table td, th {
+    padding: 8px 16px;
+    vertical-align: middle;
+}
+
+table {
+    border-spacing: 0;
+}
