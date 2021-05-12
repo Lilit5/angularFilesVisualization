@@ -16,7 +16,7 @@ export class WindowsViewComponent implements OnInit {
   paths;
   foldersWithContent;
   utils;
-  folderIndex: number;
+  // folderIndex: number;
   itemName: string;
   pathsHttp;
   rootDir;
@@ -27,18 +27,20 @@ export class WindowsViewComponent implements OnInit {
     this.pathsHttp = pathsHttp;
     this.paths = filePaths.pathsParsed;
     this.foldersWithContent = filePaths.foldersWithContent;
-    this.folderIndex = 0;
+    // this.folderIndex = 0;
     this.rootDir = utils.getRootDir(this.paths);
-    this.detailedList = utils.getDetailesForEarchFile(this.paths, this.foldersWithContent)
+    this.detailedList = utils.getDetailesForEarchFile(this.paths)
   }
 
-  defineFileType() {
-    console.log("this.folderIndex ----- ",this.folderIndex);
+  defineFileType(root) {
+    // console.log("this.folderIndex ----- ",this.folderIndex);
     // this.itemName = 
-    this.folderIndex++;
-    console.log("clckeeeeeeeeeeed", this.foldersWithContent);
-
-  
+    // this.folderIndex++;
+    console.log("clckeeeeeeeeeeed", root);
+    if (this.detailedList[root].type === 'folder') {
+      this.rootDir = root;
+    }
+    
   }
 
   sortByFieldName(sortBy: string) {

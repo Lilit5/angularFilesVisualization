@@ -65,7 +65,7 @@
     border: 3px solid green;
 } */
 
-.content-table tr:not(:first-child):hover {
+.content-table tr:hover {
     background-color: rgb(158, 199, 226, 0.3);
 }
 
@@ -80,10 +80,5 @@ th:hover {
 
 table {
     border-spacing: 0;
-}
-
-
-table div {
-    width: auto;
-    height: auto;
+    width: 100%;
 }

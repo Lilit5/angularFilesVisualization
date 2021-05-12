@@ -24,28 +24,25 @@
             </tr>
             <!-- {{rootDir}} -->
             <!-- {{foldersWithContent}} -->
-            <div *ngFor="let path of foldersWithContent">
+            <ng-container  *ngFor="let path of foldersWithContent" class="tbody-wrapper">
                 <!-- {{path}} -->
-                <!-- <div *ngFor="let el of path[rootDir]"> -->
+                <tr *ngFor="let el of path[rootDir]" (dblclick)="defineFileType(el)">
                     <!-- {{el}} -->
-                    <!-- {{path.path[folderIndex]}} == {{el}} -->
-                    <tr *ngFor="let el of path[rootDir]" (dblclick)="defineFileType()">
-                        {{el}}
                     <!-- <tr *ngIf="path.path[folderIndex] !== el" (dblclick)="defineFileType()"> -->
-                        <td *ngIf="path.type == 'folder'; else elseBlock" class="folder-icon">
-                            {{path.path[folderIndex]}}
+                    <td *ngIf="detailedList[el].type == 'folder'; else elseBlock" class="folder-icon">
+                        <!-- {{path.path[folderIndex]}} -->
+                        {{detailedList[el].details.name}}
+                    </td>
+                    <ng-template #elseBlock>
+                        <td class="file-icon">
+                            {{detailedList[el].details.name}}
                         </td>
-                        <ng-template #elseBlock>
-                            <td class="file-icon">
-                                {{path.details.name}}
-                            </td>
-                        </ng-template>
-                        <td>{{path.modificationDate}}</td>
-                        <td>{{path.type}}</td>
-                        <td>{{path.size}}</td>
-                        </tr>
-                <!-- </div> -->
-            </div>
+                    </ng-template>
+                    <td>{{detailedList[el].modificationDate}}</td>
+                    <td>{{detailedList[el].type}}</td>
+                    <td>{{detailedList[el].size}}</td>
+                </tr>
+            </ng-container>
         </table>
     </div>
 </div>
