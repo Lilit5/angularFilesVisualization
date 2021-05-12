@@ -1,12 +1,12 @@
 <div id="windows-view">
     <div class="header flex-horizontal">
         <img class="back-btn icon" src="{{backArrowIconUrl}}" alt="back-button" (click)="changeRoot(oldRootDir)">
-        <div class="file-path">
+        <div class="file-path flex-horizontal">
             <img class="edit-icon icon" src="{{folderIconUrl}}" alt="edit-icon">
-            <div class="path" contenteditable="false"></div>
-            <button class="refresh-btn"></button>
+            <div class="path" contenteditable="false">{{detailedList[rootDir].path}}</div>
+            <img class="refresh-btn" src="{{refreshIconUrl}}" alt="refresh-icon" (click)="refresh()">
         </div>
-        <input type="text" placeholder="Search {{cwd}}">
+        <input type="text" placeholder="Search {{rootDir}}">
         <!-- after glass icon -->
     </div>
     <div class="content-table">

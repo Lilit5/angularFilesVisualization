@@ -23,7 +23,7 @@
     padding: 30px 150px;
 }
 
-.hrader, .file-path{
+.header, .file-path{
     width: 100%;
     height: auto;
 }
@@ -52,12 +52,17 @@
 .path {
     width: 70%;
     height: 10px;
-    background-color: grey;
+    /* background-color: grey; */
+    color: black;
+    padding: 8px 16px;
 }
 
 .file-path * {
     display: inline;
-
+}
+.header {
+    border: 1px solid black;
+    padding: 4px 8px;
 }
 
 /* .back-btn:hover {

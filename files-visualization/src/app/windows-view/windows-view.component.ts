@@ -13,6 +13,7 @@ export class WindowsViewComponent implements OnInit {
   folderIconUrl: string = 'assets/images/win-icons/folder-icon.png';
   backArrowIconUrl: string = 'assets/images/win-icons/arrow-up-icon.png';
   fileIconUrl: string = 'assets/images/win-icons/file-icon.png'
+  refreshIconUrl: string = 'assets/images/win-icons/refresh-icon_sm.png'
   paths;
   foldersWithContent;
   utils;
@@ -48,6 +49,10 @@ export class WindowsViewComponent implements OnInit {
     const sortedContent = this.utils.sortContent(this.foldersWithContent, sortBy);
     this.foldersWithContent = sortedContent;
   }
+
+  refresh() {
+    window.location.reload();
+}
 
   ngOnInit(): void {
     // this.pathsHttp.getPaths().subscribe(data => {
