@@ -1,14 +1,9 @@
 <div id="windows-view">
     <div class="header flex-horizontal">
-        <img class="back-btn icon" src="{{backArrowIconUrl}}" alt="">
+        <img class="back-btn icon" src="{{backArrowIconUrl}}" alt="back-button" (click)="changeRoot(oldRootDir)">
         <div class="file-path">
-            <img class="edit-icon icon" src="{{folderIconUrl}}" alt="">
+            <img class="edit-icon icon" src="{{folderIconUrl}}" alt="edit-icon">
             <div class="path" contenteditable="false"></div>
-            <div class="dropdown-arrow">
-                <!-- <ul>
-                    <li></li>
-                </ul> -->
-            </div>
             <button class="refresh-btn"></button>
         </div>
         <input type="text" placeholder="Search {{cwd}}">
@@ -26,7 +21,7 @@
             <!-- {{foldersWithContent}} -->
             <ng-container  *ngFor="let path of foldersWithContent" class="tbody-wrapper">
                 <!-- {{path}} -->
-                <tr *ngFor="let el of path[rootDir]" (dblclick)="defineFileType(el)">
+                <tr *ngFor="let el of path[rootDir]" (dblclick)="changeRoot(el)">
                     <!-- {{el}} -->
                     <!-- <tr *ngIf="path.path[folderIndex] !== el" (dblclick)="defineFileType()"> -->
                     <td *ngIf="detailedList[el].type == 'folder'; else elseBlock" class="folder-icon">

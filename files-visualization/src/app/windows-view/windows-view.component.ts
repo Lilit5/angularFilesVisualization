@@ -19,7 +19,8 @@ export class WindowsViewComponent implements OnInit {
   // folderIndex: number;
   itemName: string;
   pathsHttp;
-  rootDir;
+  rootDir: string;
+  oldRootDir: string;
   detailedList;
 
   constructor(filePaths: FilePathService, utils: Utils, pathsHttp: FilePathHttpService) { 
@@ -29,14 +30,13 @@ export class WindowsViewComponent implements OnInit {
     this.foldersWithContent = filePaths.foldersWithContent;
     // this.folderIndex = 0;
     this.rootDir = utils.getRootDir(this.paths);
+    this.oldRootDir = this.rootDir;
     this.detailedList = utils.getDetailesForEarchFile(this.paths)
   }
 
-  defineFileType(root) {
-    // console.log("this.folderIndex ----- ",this.folderIndex);
-    // this.itemName = 
-    // this.folderIndex++;
+  changeRoot(root) {
     console.log("clckeeeeeeeeeeed", root);
+    this.oldRootDir = this.rootDir;
     if (this.detailedList[root].type === 'folder') {
       this.rootDir = root;
     }
