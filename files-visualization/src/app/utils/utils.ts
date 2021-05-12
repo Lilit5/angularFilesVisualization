@@ -41,6 +41,22 @@ export class Utils {
     }
 
     /**
+     * Function finds the root folder
+     * 
+     * @param data array where root should be found
+     * @returns root folder name
+     */
+    getRootDir(data: Array<Object>) {
+        let treeRoot = '';
+        for(let i = 0; i < data.length; i++){
+          if(data[i]['type'] === 'folder' && !data[i]['path'].includes('/')){
+            treeRoot = data[i]['path'];
+          }
+          return treeRoot;
+        }
+    }
+
+    /**
      * Function returns new sorted array from given 
      * 
      * @param pathsArray - array that should be sorted
@@ -58,5 +74,17 @@ export class Utils {
         
 
         return sortedArray;
+    }
+
+    /**
+     * 
+     * @param pathsArray 
+     * @param foldersWithContents 
+     */
+    getDetailesForEarchFile(pathsArray: Array<Object>, foldersWithContents: Array<Object>) {
+        const filesList = foldersWithContents.map(el => Object.values(el))
+        console.log("filesList -------- ", [].concat(...filesList));
+        
+        // const detailedList = foldersWithContents
     }
 }

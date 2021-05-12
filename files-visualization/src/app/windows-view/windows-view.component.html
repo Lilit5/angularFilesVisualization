@@ -22,12 +22,16 @@
                 <th (click)="sortByFieldName('type')">Type</th>
                 <th (click)="sortByFieldName('size')">Size</th>
             </tr>
+            <!-- {{rootDir}} -->
+            <!-- {{foldersWithContent}} -->
             <div *ngFor="let path of foldersWithContent">
-                {{path}}
-                <!-- <div *ngFor="let el of path.path"> -->
+                <!-- {{path}} -->
+                <!-- <div *ngFor="let el of path[rootDir]"> -->
                     <!-- {{el}} -->
                     <!-- {{path.path[folderIndex]}} == {{el}} -->
-                    <tr *ngIf="path.path[folderIndex] !== el" (dblclick)="defineFileType()">
+                    <tr *ngFor="let el of path[rootDir]" (dblclick)="defineFileType()">
+                        {{el}}
+                    <!-- <tr *ngIf="path.path[folderIndex] !== el" (dblclick)="defineFileType()"> -->
                         <td *ngIf="path.type == 'folder'; else elseBlock" class="folder-icon">
                             {{path.path[folderIndex]}}
                         </td>

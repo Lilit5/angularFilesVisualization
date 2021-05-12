@@ -9,6 +9,8 @@ import { MacViewComponent } from './mac-view/mac-view.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component'
 import { FilePathService } from './services/file-path.service';
 import { Utils } from './utils/utils';
+import { HttpClientModule } from '@angular/common/http';
+import { FilePathHttpService } from './services/file-path-http.service';
 
 const routes: Routes = [
   { path: '', component: ChooseOsScreenComponent, pathMatch: 'full' },
@@ -27,11 +29,13 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,  
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [
     FilePathService,
-    Utils
+    Utils,
+    FilePathHttpService
   ],
   bootstrap: [AppComponent]
 })
