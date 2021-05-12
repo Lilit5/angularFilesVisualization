@@ -24,12 +24,20 @@ export class Utils {
      * @returns object of parsed folders, with content
      */
     parseFolderContent(pathsArray: Array<Object>) {
-        const pathsSplited : Array<Object> = pathsArray.map((el: Object) => {
-           return  {...el, path: el["path"].split('/')};
+        const pathsSplited : Array<Array<any>> = pathsArray.map((el: Object) => {
+        //    return  {...el, path: el["path"].split('/')};
+           return el["path"].split('/');
         });
         console.log("pathsSplited ------------ ", pathsSplited);
-     
-        return pathsSplited;
+        const folderNames = [... new Set([].concat(...pathsSplited).filter(el => !el.includes('.')))];
+        console.log("folderNames --------------- ", folderNames);
+        const foldersWithContents = folderNames.map(folder => {
+            return {[folder]: [...new Set(pathsSplited.filter(el => el.includes(folder)).map(el => el[el.indexOf(folder)+1]))].filter(el => el)};
+        })
+        console.log("foldersWithContents ----------- ", foldersWithContents);
+        
+
+        return foldersWithContents;
     }
 
     /**

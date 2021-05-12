@@ -11,7 +11,7 @@
             </div>
             <button class="refresh-btn"></button>
         </div>
-        <input type="text" placeholder="Search {{cwd}}"> 
+        <input type="text" placeholder="Search {{cwd}}">
         <!-- after glass icon -->
     </div>
     <div class="content-table">
@@ -22,19 +22,26 @@
                 <th (click)="sortByFieldName('type')">Type</th>
                 <th (click)="sortByFieldName('size')">Size</th>
             </tr>
-            <tr *ngFor="let path of foldersWithContent"  (dblclick)="defineFileType()">
-                <td *ngIf="path.type == 'folder'; else elseBlock" class="folder-icon">
-                    {{path.path[folderIndex]}}
-                </td>
-                <ng-template #elseBlock>
-                    <td class="file-icon">
-                        {{path.details.name}}
-                    </td>
-                </ng-template>
-                <td>{{path.modificationDate}}</td>
-                <td>{{path.type}}</td>
-                <td>{{path.size}}</td>
-            </tr>
+            <div *ngFor="let path of foldersWithContent">
+                {{path}}
+                <!-- <div *ngFor="let el of path.path"> -->
+                    <!-- {{el}} -->
+                    <!-- {{path.path[folderIndex]}} == {{el}} -->
+                    <tr *ngIf="path.path[folderIndex] !== el" (dblclick)="defineFileType()">
+                        <td *ngIf="path.type == 'folder'; else elseBlock" class="folder-icon">
+                            {{path.path[folderIndex]}}
+                        </td>
+                        <ng-template #elseBlock>
+                            <td class="file-icon">
+                                {{path.details.name}}
+                            </td>
+                        </ng-template>
+                        <td>{{path.modificationDate}}</td>
+                        <td>{{path.type}}</td>
+                        <td>{{path.size}}</td>
+                        </tr>
+                <!-- </div> -->
+            </div>
         </table>
     </div>
 </div>

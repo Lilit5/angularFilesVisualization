@@ -81,3 +81,9 @@ th:hover {
 table {
     border-spacing: 0;
 }
+
+
+table div {
+    width: auto;
+    height: auto;
+}

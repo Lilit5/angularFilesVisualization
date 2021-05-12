@@ -21,7 +21,7 @@ export class WindowsViewComponent implements OnInit {
   constructor(filePaths: FilePathService, utils: Utils) { 
     this.utils = utils;
     this.paths = filePaths.pathsParsed;
-    this.foldersWithContent = filePaths.foldersWithContent;
+    this.foldersWithContent = Object.entries(filePaths.foldersWithContent);
     this.folderIndex = 0;
   }
 
@@ -49,7 +49,6 @@ export class WindowsViewComponent implements OnInit {
 
   sortByFieldName(sortBy: string) {
     console.log("Sorting ...");
-    
     const sortedContent = this.utils.sortContent(this.foldersWithContent, sortBy);
     this.foldersWithContent = sortedContent;
   }
