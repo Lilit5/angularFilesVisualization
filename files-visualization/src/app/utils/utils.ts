@@ -82,24 +82,21 @@ export class Utils {
      * @param pathsArray array where details should be found
      */
     getDetailesForEarchFile(pathsArray: Array<Object>) {
-        // const pathsSplited: Array<Array<any>> = pathsArray.map((el: Object) => {
-        //     return el["path"].split('/');
-        // });
-        // console.log("pathsSplited2 ------------ ", pathsSplited);
-        // const itemNames = [... new Set([].concat(...pathsSplited))];
-        // console.log("itemNames --- ", itemNames);
-        
-
         const detailedList = {};
         let currentName: string;
         for (let el of pathsArray) {
             currentName = el["path"].split('/');
             currentName = currentName[currentName.length - 1];
-            // console.log("currentName -- ", currentName);
 
             detailedList[currentName] = el;
         }
         console.log("detailedList --------- ", detailedList);
         return detailedList;
+    }
+
+    getSearchResults(detailedList: Object, searchable: string) {
+        const matchedItems = Object.keys(detailedList).filter(el => el.includes(searchable));
+        console.log("matchedItems ", matchedItems);
+        return matchedItems.map(el => detailedList[el]);
     }
 }

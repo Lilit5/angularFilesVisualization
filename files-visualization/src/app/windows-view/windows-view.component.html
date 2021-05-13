@@ -1,3 +1,4 @@
+<button routerLink="/">Back</button>
 <div id="windows-view">
     <div class="header flex-horizontal">
         <img class="back-btn icon" src="{{backArrowIconUrl}}" alt="back-button" (click)="changeRoot(oldRootDir)">
@@ -6,7 +7,12 @@
             <div class="path" contenteditable="false">{{detailedList[rootDir].path}}</div>
             <img class="refresh-btn" src="{{refreshIconUrl}}" alt="refresh-icon" (click)="refresh()">
         </div>
-        <input type="text" placeholder="Search {{rootDir}}">
+        <input type="text" 
+                placeholder="Search {{rootDir}}"
+                name="searchable" 
+                [(ngModel)]="searchable"
+                (keyup.enter)="search()"
+                >
         <!-- after glass icon -->
     </div>
     <div class="content-table">
@@ -39,5 +45,13 @@
                 </tr>
             </ng-container>
         </table>
+        <div class="search-result" [class.visible]="isSearching">
+            <ul *ngFor="let result of searchResutls" class="flex-horizontal">
+                <li class="flex-horizontal">
+                    <p>Path: {{result.path}}  last modified at: {{result.modificationDate}}</p>
+                </li>
+            </ul>
+            <button (click)="isSearching = false">Back to folder</button>
+        </div>
     </div>
 </div>

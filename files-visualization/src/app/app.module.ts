@@ -11,6 +11,7 @@ import { FilePathService } from './services/file-path.service';
 import { Utils } from './utils/utils';
 import { HttpClientModule } from '@angular/common/http';
 import { FilePathHttpService } from './services/file-path-http.service';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: ChooseOsScreenComponent, pathMatch: 'full' },
@@ -30,7 +31,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,  
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     FilePathService,

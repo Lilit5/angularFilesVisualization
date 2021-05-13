@@ -23,6 +23,9 @@ export class WindowsViewComponent implements OnInit {
   rootDir: string;
   oldRootDir: string;
   detailedList;
+  isSearching: boolean;
+  searchResutls;
+  searchable: string;
 
   constructor(filePaths: FilePathService, utils: Utils, pathsHttp: FilePathHttpService) { 
     this.utils = utils;
@@ -33,6 +36,7 @@ export class WindowsViewComponent implements OnInit {
     this.rootDir = utils.getRootDir(this.paths);
     this.oldRootDir = this.rootDir;
     this.detailedList = utils.getDetailesForEarchFile(this.paths)
+    this.isSearching = false;
   }
 
   changeRoot(root) {
@@ -52,6 +56,19 @@ export class WindowsViewComponent implements OnInit {
 
   refresh() {
     window.location.reload();
+}
+
+search() {
+  this.searchResutls = this.utils.getSearchResults(this.detailedList, this.searchable);
+  console.log("this.searchResutls --- ", this.searchResutls);
+  if (this.searchResutls.length < 1) {
+    this.searchResutls.push({
+      path: "no items found",
+      modificationDate: "no items found"
+    })
+  }
+  this.isSearching = true;
+  
 }
 
   ngOnInit(): void {

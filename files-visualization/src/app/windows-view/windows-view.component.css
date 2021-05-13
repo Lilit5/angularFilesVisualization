@@ -3,6 +3,19 @@
     --defPadding: 8px 16px;
 }
 
+button {
+    border: none;
+    padding: 8px 16px;
+    background-color: #333;
+    color: lightgray;
+}
+
+button:hover {
+    background-color: lightgray;
+    color: black;
+    cursor: pointer;
+}
+
 .flex-horizontal {
     display: flex;
     justify-content: space-around;
@@ -69,6 +82,9 @@
     background-color: var(--hover-color);
     border: 3px solid green;
 } */
+.content-table {
+    position: relative;
+}
 
 .content-table tr:hover {
     background-color: rgb(158, 199, 226, 0.3);
@@ -86,4 +102,37 @@ th:hover {
 table {
     border-spacing: 0;
     width: 100%;
+}
+
+.search-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background-color: white;
+    display: none;
+
+}
+
+.visible {
+    display: unset;
+}
+
+/* .hidden {
+} */
+
+.search-result * {
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.search-result ul {
+    width: 100%;
+    padding: 4px 8px;
+}
+
+.search-result ul:hover {
+    background-color: rgb(158, 199, 226, 0.3);
 }
