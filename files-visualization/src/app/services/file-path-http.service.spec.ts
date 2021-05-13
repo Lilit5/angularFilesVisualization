@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EmailService } from './email.service';
+import { FilePathHttpService } from './file-path-http.service';
 
-describe('EmailService', () => {
-  let service: EmailService;
+describe('FilePathHttpService', () => {
+  let service: FilePathHttpService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EmailService);
+    service = TestBed.inject(FilePathHttpService);
   });
 
   it('should be created', () => {

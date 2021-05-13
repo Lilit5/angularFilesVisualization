@@ -1,11 +1,16 @@
-<div>
-    <div id="choose-os">
-        <div class="win">
-            <img src="{{winImgUrl}}" routerLink="/windows-view" alt="windows-logo">
+<div class="choose-os-wrapper flex-vertical">
+    <div class="cover-wrapper flex-horizontal">
+        <img class="cover-img" src="{{backgroundImgUrl}}" alt="background-img">
+    </div>
+    <div class="choose-os-content flex-vertical">
+        <div id="choose-os">
+            <div class="win">
+                <img class="icon" src="{{winImgUrl}}" routerLink="/windows-view" alt="windows-logo">
+            </div>
+            <div class="mac">
+                <img class="icon" src="{{macImgUrl}}" routerLink="/mac-view" alt="mac-logo">
+            </div>
         </div>
-        <h3 routerLink="/">Choose the dseign you want</h3>
-        <div class="mac">
-            <img src="{{macImgUrl}}" routerLink="/mac-view" alt="mac-logo">
-        </div>
+        <h5>Choose OS design</h5>
     </div>
 </div>
