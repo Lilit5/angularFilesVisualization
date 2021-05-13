@@ -119,9 +119,6 @@ table {
     display: unset;
 }
 
-/* .hidden {
-} */
-
 .search-result * {
     list-style: none;
     flex-wrap: wrap;
@@ -135,4 +132,8 @@ table {
 
 .search-result ul:hover {
     background-color: rgb(158, 199, 226, 0.3);
+}
+
+.refresh-btn:hover, .back-btn:hover {
+    cursor: pointer;
 }

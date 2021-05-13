@@ -72,32 +72,9 @@ search() {
 }
 
   ngOnInit(): void {
+    //  TODO How to get data from json-server asynchronusly when constructor does not support async?
     // this.pathsHttp.getPaths().subscribe(data => {
-    //   console.log("data ------- ", data);
-    //   var tree = [[[],[]]];
-    //   var tree_root = '';
-    //   // console.log(data.length);
-    //   let j=0;
-    //   for(let i = 0; i < data.length; i++){
-    //     //console.log(data[i]['type']);
-    //     if(data[i]['type'] === 'folder' && !data[i]['path'].includes('/')){
-    //       tree_root = data[i]['path'];
-    //       tree[0] = [data[i]['path']];
-    //       //console.log(data[i]);
-    //     }
-    //     // else if(data[i]['type'] === 'folder' && data[i]['path'].includes('/')){
-    //     //   if(data[i]['path'].split('/')[0] === tree_root){
-    //     //     console.log(tree[0][0].push(['121']));
-    //     //     //tree[0][i] = data[i]['path'].split('/')[1];
-    //     //     j++;
-    //     //   }
-    //     // }
-    //    /* if(tree_root === data[i]['path'] && data[i]['path'].includes('/') && ){
-  
-    //     }*/
-    //   }
-    //   console.log("tree ------- ", tree);
-
+    //   this.paths = data;
     // })
   }
 
