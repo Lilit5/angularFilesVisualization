@@ -49,7 +49,6 @@ button:hover {
 
 .file-icon::before, .folder-icon::before {
     content: '';
-    /* background-image: url({{fileIconUrl}}); */
     content: url(../../assets/images/win-icons/file-icon_sm.png);
     width: 15px;
     height: 20px;
@@ -65,7 +64,6 @@ button:hover {
 .path {
     width: 70%;
     height: 10px;
-    /* background-color: grey; */
     color: black;
     padding: 8px 16px;
 }
@@ -78,10 +76,6 @@ button:hover {
     padding: 4px 8px;
 }
 
-/* .back-btn:hover {
-    background-color: var(--hover-color);
-    border: 3px solid green;
-} */
 .content-table {
     position: relative;
 }

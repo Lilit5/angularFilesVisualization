@@ -13,7 +13,6 @@
                 [(ngModel)]="searchable"
                 (keyup.enter)="search()"
                 >
-        <!-- after glass icon -->
     </div>
     <div class="content-table">
         <table>
@@ -23,15 +22,9 @@
                 <th (click)="sortByFieldName('type')">Type</th>
                 <th (click)="sortByFieldName('size')">Size</th>
             </tr>
-            <!-- {{rootDir}} -->
-            <!-- {{foldersWithContent}} -->
             <ng-container  *ngFor="let path of foldersWithContent" class="tbody-wrapper">
-                <!-- {{path}} -->
                 <tr *ngFor="let el of path[rootDir]" (dblclick)="changeRoot(el)">
-                    <!-- {{el}} -->
-                    <!-- <tr *ngIf="path.path[folderIndex] !== el" (dblclick)="defineFileType()"> -->
                     <td *ngIf="detailedList[el].type == 'folder'; else elseBlock" class="folder-icon">
-                        <!-- {{path.path[folderIndex]}} -->
                         {{detailedList[el].details.name}}
                     </td>
                     <ng-template #elseBlock>

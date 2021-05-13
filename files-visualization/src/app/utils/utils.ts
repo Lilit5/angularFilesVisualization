@@ -25,17 +25,12 @@ export class Utils {
      */
     parseFolderContent(pathsArray: Array<Object>) {
         const pathsSplited: Array<Array<any>> = pathsArray.map((el: Object) => {
-            //    return  {...el, path: el["path"].split('/')};
             return el["path"].split('/');
         });
-        console.log("pathsSplited ------------ ", pathsSplited);
         const folderNames = [... new Set([].concat(...pathsSplited).filter(el => !el.includes('.')))];
-        console.log("folderNames --------------- ", folderNames);
         const foldersWithContents = folderNames.map(folder => {
             return { [folder]: [...new Set(pathsSplited.filter(el => el.includes(folder)).map(el => el[el.indexOf(folder) + 1]))].filter(el => el) };
         })
-        console.log("foldersWithContents ----------- ", foldersWithContents);
-
 
         return foldersWithContents;
     }
@@ -52,8 +47,8 @@ export class Utils {
             if (data[i]['type'] === 'folder' && !data[i]['path'].includes('/')) {
                 treeRoot = data[i]['path'];
             }
-            return treeRoot;
         }
+        return treeRoot;
     }
 
     /**
@@ -64,14 +59,10 @@ export class Utils {
      * @returns new sorted array
      */
     sortContent(pathsArray: Array<Object>, sortBy: string) {
-        console.log("sortBy ------------ ", sortBy);
-
         const sortedArray = pathsArray.slice();
         sortedArray.sort((el1: Object, el2: Object) => {
             return el1[sortBy] > el2[sortBy] ? 1 : -1;
         })
-        console.log("sortedArray ------- ", sortedArray);
-
 
         return sortedArray;
     }
@@ -90,13 +81,20 @@ export class Utils {
 
             detailedList[currentName] = el;
         }
-        console.log("detailedList --------- ", detailedList);
+
         return detailedList;
     }
 
+    /**
+     * Function searches in list by given pattern
+     * 
+     * @param detailedList list where search should be done
+     * @param searchable pattern to search
+     * @returns array with all matched items
+     */
     getSearchResults(detailedList: Object, searchable: string) {
         const matchedItems = Object.keys(detailedList).filter(el => el.includes(searchable));
-        console.log("matchedItems ", matchedItems);
+
         return matchedItems.map(el => detailedList[el]);
     }
 }

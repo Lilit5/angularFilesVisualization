@@ -17,7 +17,6 @@ export class WindowsViewComponent implements OnInit {
   paths;
   foldersWithContent;
   utils;
-  // folderIndex: number;
   itemName: string;
   pathsHttp;
   rootDir: string;
@@ -32,7 +31,6 @@ export class WindowsViewComponent implements OnInit {
     this.pathsHttp = pathsHttp;
     this.paths = filePaths.pathsParsed;
     this.foldersWithContent = filePaths.foldersWithContent;
-    // this.folderIndex = 0;
     this.rootDir = utils.getRootDir(this.paths);
     this.oldRootDir = this.rootDir;
     this.detailedList = utils.getDetailesForEarchFile(this.paths)
@@ -40,16 +38,13 @@ export class WindowsViewComponent implements OnInit {
   }
 
   changeRoot(root) {
-    console.log("clckeeeeeeeeeeed", root);
     this.oldRootDir = this.rootDir;
     if (this.detailedList[root].type === 'folder') {
       this.rootDir = root;
     }
-    
   }
 
   sortByFieldName(sortBy: string) {
-    console.log("Sorting ...");
     const sortedContent = this.utils.sortContent(this.foldersWithContent, sortBy);
     this.foldersWithContent = sortedContent;
   }
@@ -60,7 +55,6 @@ export class WindowsViewComponent implements OnInit {
 
 search() {
   this.searchResutls = this.utils.getSearchResults(this.detailedList, this.searchable);
-  console.log("this.searchResutls --- ", this.searchResutls);
   if (this.searchResutls.length < 1) {
     this.searchResutls.push({
       path: "no items found",
