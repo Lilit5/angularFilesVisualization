@@ -29,6 +29,7 @@ Currently application supports following features:
 
 And some additional features:
 * Main screen with possibility to choose OS type
+* Pages Routing
 * Refresh page button
 * Default 'not found' page for non existing urls
 * mocking json data using 'json-server' (half-implemented. needs some clarification)
